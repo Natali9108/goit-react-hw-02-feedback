@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { SectionBox, FeedBackTitle } from './Section.styled';
 
 export const Section = ({ title, children }) => {
-  // title = {
-  //   feedback: <h1>Please leave feedback</h1>,
-  //   statistics: <h2>Statictics</h2>,
-  // };
-
   return (
-    <section>
-      <h2>{title}</h2>
+    <SectionBox>
+      <FeedBackTitle>{title}</FeedBackTitle>
       {children}
-    </section>
+    </SectionBox>
   );
+};
+
+Section.prototype = {
+  title: PropTypes.string.isRequired,
 };

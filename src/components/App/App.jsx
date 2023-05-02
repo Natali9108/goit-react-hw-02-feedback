@@ -3,9 +3,9 @@ import { Section } from '../Section/Section';
 import { Statistics } from '../Statistics/Statistics';
 import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions';
 import { Notification } from '../Notification/Notification';
+import { Container } from './App.styled';
 
 export class App extends Component {
-  // return <div>{/* <Feedback /> */}</div>;
   static defaultProps = {
     initialValue: 0,
   };
@@ -40,7 +40,7 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -61,7 +61,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }
