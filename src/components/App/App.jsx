@@ -16,11 +16,10 @@ export class App extends Component {
     bad: this.props.initialValue,
   };
 
-  handleClick = evt => {
-    const key = evt.target.textContent.toLowerCase();
-    this.setState(prevState => ({
-      [key]: prevState[key] + 1,
-    }));
+  handleClick = option => {
+    this.setState(prevState => {
+      return { [option]: prevState[option] + 1 };
+    });
   };
 
   countTotalFeedback = () => {
